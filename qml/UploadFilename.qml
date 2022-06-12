@@ -1,9 +1,10 @@
-import QtQuick 2.1
-import QtQuick.Controls 1.1
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtQuick.Dialogs 1.2
-import QtQuick.Window 2.1
+import QtQuick.Window 2.2
 
-import UM 1.1 as UM
+import UM 1.5 as UM
+import Cura 1.5 as Cura
 
 UM.Dialog
 {
@@ -58,15 +59,14 @@ UM.Dialog
     }
 
     rightButtons: [
-        Button {
+        Cura.SecondaryButton {
             text: catalog.i18nc("@action:button", "Cancel");
             onClicked: base.reject();
         },
-        Button {
+        Cura.PrimaryButton {
             text: catalog.i18nc("@action:button", "OK");
             onClicked: base.accept();
             enabled: base.validName;
-            isDefault: true;
         }
     ]
 }
